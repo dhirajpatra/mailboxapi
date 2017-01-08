@@ -136,4 +136,7 @@ Few Screen Shots from testing by rest client:
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/phpunit_test_result.jpg)
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_list.png)
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_show.png)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_listarchive.png)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_makearchive.png)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_read.png)
 

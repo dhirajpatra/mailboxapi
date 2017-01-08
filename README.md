@@ -120,4 +120,10 @@ eg. before updating to archive need to check whether it is already updated as ar
 * /tests/MailboxTest.php
 * /database/migration/2017_01_08_093215_mail_details.php [auto generated database migration file to create / update table]
 
+### How to run ###
+This is full Laravel development framework. Where all REST API has been implemented. You can change the database connections configuration. Also change the route as per your document root for application folder. eg. http://laravel/ [virtual host]
+
+Used REST client to test API. 
+
+
 

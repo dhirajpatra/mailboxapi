@@ -132,5 +132,7 @@ And then run following commands from terminal:
 
 Used REST client to test API. 
 
-
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/dfd_mail_box_api.png)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/phpunit_test_result.jpg)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_list.png)
 

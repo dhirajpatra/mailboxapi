@@ -1,0 +1,11 @@
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /var/www/html/laravel/public
+
+
+# Handle Front Controller...
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]

@@ -1,5 +1,8 @@
 # mailboxapi #
 Mailbox REST API. This is a small E-mail client to manage internal messaging. I have been provided a simple prototype for a basic mailbox API in which the provided messages are listed. Each message can be marked as read and you can archive single messages.
+### Used ###
+PHP 7.0, mysql 5.6, apache 2.4 in Ubuntu 16.04
+Laravel 5.2
 
 ==========================================================================================================================
 ## Specifications ##

@@ -123,6 +123,10 @@ eg. before updating to archive need to check whether it is already updated as ar
 ### How to run ###
 This is full Laravel development framework. Where all REST API has been implemented. You can change the database connections configuration. Also change the route as per your document root for application folder. eg. http://laravel/ [virtual host]
 
+Git clone or download the whole folder into your document root or in virtual host. 
+And then run following commands from terminal:
+###php artisan make:migration mail_details###
+
 Used REST client to test API. 
 
 

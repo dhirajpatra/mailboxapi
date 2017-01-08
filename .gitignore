@@ -5,3 +5,7 @@
 Homestead.json
 Homestead.yaml
 .env
+storage/framework/cache/
+storage/framework/sessions/
+storage/logs/
+

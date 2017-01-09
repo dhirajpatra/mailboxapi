@@ -88,7 +88,7 @@ class MailboxapiController extends Controller
 
             $statusCode = 400;
             return response(array(
-                'error' => false,
+                'error' => true,
                 'message' =>'Archived messages fetch error',
             ), $statusCode);
 
@@ -135,10 +135,10 @@ class MailboxapiController extends Controller
 
             $statusCode = 400;
             return response(array(
-                'error' => false,
+                'error' => true,
                 'message' =>'Fetched message details error',
             ), $statusCode);
-
+	
         }
     }
 

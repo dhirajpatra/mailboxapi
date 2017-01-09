@@ -104,7 +104,7 @@ More details in /tests/ folder.
 
 ==================================================================================================
 
-## This is prototype only need many improvements into production version ##
+## This is a prototype. We can make many improvements for production version ##
 I have created within a night :). So definitely have room for lot of improvements in production version. Few are below:
 
 * Passport / Oauth2 based API token authentication method for calling REST APIs [https://laravel.com/docs/5.3/passport]

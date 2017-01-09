@@ -141,3 +141,4 @@ Few Screen Shots from testing by rest client:
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_read.png)
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_savemessages_1.png)
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/rest_savemessages_2.png)
+![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/mail_details_dbtable.png)

@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 })->middleware('auth:api'); */
 
 /**
- * routes for mailbox api 
+ * routes for mailbox api v1
  */
 Route::group(array('prefix' => 'v1'), function() {
     Route::post('mailbox','MailboxapiController@index');

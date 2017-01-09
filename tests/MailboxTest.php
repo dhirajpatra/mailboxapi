@@ -56,7 +56,7 @@ class MailboxTest extends TestCase
     					"to",
     					"data" => 
     						[	
-    							"*" =>    							
+    							"*" =>
 			    				[
 			    					"mail_detail_id",
 			    					"mail_detail_uid",

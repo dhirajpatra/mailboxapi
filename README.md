@@ -38,7 +38,7 @@ eg. JSON Response
  ---
 
 * List messages 
-Retrieve a paginateable list of all messages. Show if messages were read already.
+Retrieve a paginateable list of all messages. Show if messages were read already. Paginated way.
 
 JSON Request
 
@@ -49,7 +49,7 @@ JSON Response
 ---
      
 * List archived messages
-Retrieve a paginateable list of all archived messages. Show if messages were read already.
+Retrieve a paginateable list of all archived messages. Show if messages were read already. Paginated way.
 
 JSON Request
 

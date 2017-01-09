@@ -95,14 +95,14 @@ class Mail_detail extends Model
      */
     public function archiveMail($id)
     {
-        
+
         try {
             // verify email
             $mailDetails = $this->_checkMail($id);
 
             if(!empty($mailDetails)) {
                 // update to archive if not already
-                Mail_detail::where([
+                $this->where([
                         ['mail_detail_id', $id],
                         ['mail_detail_archive', 0]
                     ])

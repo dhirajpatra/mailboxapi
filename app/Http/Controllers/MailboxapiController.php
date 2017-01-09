@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Mail_detail;
-/* use App\Http\Requests;
-use App\Http\Responses;
-use App\Post; */
-
 
 
 /**

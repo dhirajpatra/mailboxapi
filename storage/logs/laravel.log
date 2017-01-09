@@ -7686,3 +7686,44 @@ Stack trace:
 #40 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #41 /var/www/html/laravel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #42 {main}  
+[2017-01-09 12:34:23] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Class 'app\Modules\ServiceProvider' not found in /var/www/html/laravel/app/Modules/ModulesServiceProvider.php:12
+Stack trace:
+#0 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(132): Symfony\Component\Debug\Exception\FatalErrorException->__construct()
+#1 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(118): Illuminate\Foundation\Bootstrap\HandleExceptions->fatalExceptionFromError()
+#2 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#3 /var/www/html/laravel/vendor/composer/ClassLoader.php(414): ()
+#4 /var/www/html/laravel/vendor/composer/ClassLoader.php(301): Composer\Autoload\includeFile()
+#5 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(146): Composer\Autoload\ClassLoader->loadClass()
+#6 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(146): spl_autoload_call()
+#7 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(74): Illuminate\Foundation\ProviderRepository->createProvider()
+#8 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(540): Illuminate\Foundation\ProviderRepository->load()
+#9 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\Foundation\Application->registerConfiguredProviders()
+#10 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap()
+#11 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith()
+#12 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundation\Http\Kernel->bootstrap()
+#13 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter()
+#14 /var/www/html/laravel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle()
+#15 /var/www/html/laravel/public/index.php(0): {main}()
+#16 {main}  
+[2017-01-09 12:40:26] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\Modules\ModulesServiceProvider' not found in /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:146
+Stack trace:
+#0 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(74): Illuminate\Foundation\ProviderRepository->createProvider('App\\Modules\\Mod...')
+#1 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(540): Illuminate\Foundation\ProviderRepository->load(Array)
+#2 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\Foundation\Application->registerConfiguredProviders()
+#3 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#4 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#5 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundation\Http\Kernel->bootstrap()
+#6 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#7 /var/www/html/laravel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#8 {main}  
+[2017-01-09 12:40:37] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\Modules\ModulesServiceProvider' not found in /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:146
+Stack trace:
+#0 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(74): Illuminate\Foundation\ProviderRepository->createProvider('App\\Modules\\Mod...')
+#1 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(540): Illuminate\Foundation\ProviderRepository->load(Array)
+#2 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\Foundation\Application->registerConfiguredProviders()
+#3 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\RegisterProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#4 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#5 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundation\Http\Kernel->bootstrap()
+#6 /var/www/html/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#7 /var/www/html/laravel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#8 {main}  

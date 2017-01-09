@@ -47,7 +47,9 @@ class Mail_detail extends Model
     {
         try {
             // fetching mails
-            $mails = $this->where('mail_detail_archive', 0)
+            $mails = $this->where([
+                    ['mail_detail_archive', 0]
+                ])
                 ->orderBy('mail_detail_id', 'desc')
                 ->paginate(5)
                 ->toArray();
@@ -133,7 +135,9 @@ class Mail_detail extends Model
 
             if(!empty($mailDetails)) {
                 // fetching mail details
-                $mails = $this->where('mail_detail_id', $id)
+                $mails = $this->where([
+                    ['mail_detail_id', $id]
+                ])
                     ->get()
                     ->toArray();
 
@@ -192,7 +196,9 @@ class Mail_detail extends Model
     {
         try{
             // fetching mail details
-            $mailDetails = $this->where('mail_detail_id', $id)
+            $mailDetails = $this->where([
+                ['mail_detail_id', $id]
+            ])
                 ->get()
                 ->toArray();
             if(!empty($mailDetails)){

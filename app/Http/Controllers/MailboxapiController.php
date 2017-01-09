@@ -33,6 +33,7 @@ class MailboxapiController extends Controller
     {
         try{
         	// fetch all mails except archive paginated way
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $mails = $mailDetailsObj->listMails();
 
@@ -66,6 +67,7 @@ class MailboxapiController extends Controller
     {
         try{
 			// fetching all archive mails paginated way
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $mails = $mailDetailsObj->listArchive();
             //print_r($mails); exit;
@@ -103,6 +105,7 @@ class MailboxapiController extends Controller
         try{
         	// taking id for that mail
             $id = $request->input('id');
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $mailDetails = $mailDetailsObj->showDetails($id);
             //print_r($mailDetails); exit;
@@ -162,6 +165,7 @@ class MailboxapiController extends Controller
             // mail details model object and save for every message
             $messages = $request->input('messages');
             //print_r($messages); exit;
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $update = $mailDetailsObj->saveMessages($messages);
 
@@ -209,6 +213,7 @@ class MailboxapiController extends Controller
             $id = $request->input('id');
 
             // check and update status
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $update = $mailDetailsObj->listMails($id);
             
@@ -255,6 +260,7 @@ class MailboxapiController extends Controller
         try{
             $id = $request->input('id');
 
+            // model obj
             $mailDetailsObj = new Mail_detail();
             $update = $mailDetailsObj->readMail($id);
 

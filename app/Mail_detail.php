@@ -24,7 +24,7 @@ class Mail_detail extends Model
     public function listArchive()
     {
         try {
-
+            // fetch all
             $mails = Mail_detail::where('mail_detail_archive', 1)
                 ->orderBy('mail_detail_id', 'desc')
                 ->paginate(5)
@@ -46,6 +46,7 @@ class Mail_detail extends Model
     public function listMails()
     {
         try {
+            // fetching mails
             $mails = Mail_detail::where('mail_detail_archive', 0)
                 ->orderBy('mail_detail_id', 'desc')
                 ->paginate(5)
@@ -68,10 +69,11 @@ class Mail_detail extends Model
     public function readMail($id)
     {
         try {
+            // updating mail
             Mail_detail::where([
-                ['mail_detail_id', $id],
-                ['mail_detail_read', 0]
-            ])
+                        ['mail_detail_id', $id],
+                        ['mail_detail_read', 0]
+                    ])
                 ->update(['mail_detail_read' => 1]);
 
             return true;
@@ -130,6 +132,7 @@ class Mail_detail extends Model
             $mailDetails = $this->_checkMail($id);
 
             if(!empty($mailDetails)) {
+                // fetching mail details
                 $mails = Mail_detail::where('mail_detail_id', $id)
                     ->get()
                     ->toArray();
@@ -158,6 +161,7 @@ class Mail_detail extends Model
 
        if(!empty($messages)){
            //print_r($messages); exit;
+           // saving all data
             foreach ( $messages as $message ) {
                 $mailDetail = new Mail_detail();
 
@@ -187,6 +191,7 @@ class Mail_detail extends Model
     private function _checkMail($id)
     {
         try{
+            // fetching mail details
             $mailDetails = Mail_detail::where('mail_detail_id', $id)
                 ->get()
                 ->toArray();

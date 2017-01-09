@@ -25,7 +25,9 @@ class Mail_detail extends Model
     {
         try {
             // fetch all
-            $mails = $this->where('mail_detail_archive', 1)
+            $mails = $this->where([
+                    ['mail_detail_archive', 1]
+            ])
                 ->orderBy('mail_detail_id', 'desc')
                 ->paginate(5)
                 ->toArray();

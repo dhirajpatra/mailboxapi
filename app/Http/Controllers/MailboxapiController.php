@@ -215,7 +215,7 @@ class MailboxapiController extends Controller
             // check and update status
             // model obj
             $mailDetailsObj = new Mail_detail();
-            $update = $mailDetailsObj->listMails($id);
+            $update = $mailDetailsObj->archiveMail($id);
             
             if($update){  // true
 

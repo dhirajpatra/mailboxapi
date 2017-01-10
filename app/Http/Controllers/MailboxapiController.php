@@ -23,19 +23,22 @@ class MailboxapiController extends Controller
 
     /**
      * This method will process list of all mail messages along with their details status [Read of not]
+     * @param Request $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      * eg. JSON Request
      * URL: http://laravel/api/v1/mailbox
      * eg. JSON Response
      * {"error":false,"message":"All mail fetched","mails":{"total":10,"per_page":5,"current_page":1,"last_page":2,"next_page_url":"http:\/\/laravel\/api\/v1\/mailbox?page=2","prev_page_url":null,"from":1,"to":5,"data":[{"mail_detail_id":21,"mail_detail_uid":26,"mail_detail_sender":"Jane Austen","mail_detail_subject":"treasure-hunter","mail_detail_message":"The story is about a treasure-hunter and a treasure-hunter who is constantly annoyed by a misguided duke. It takes place on a forest planet in a galaxy-spanning commonwealth. The critical element of the story is a door being opened","mail_detail_time_sent":"2016-02-29 07:20:27","mail_detail_read":0,"mail_detail_archive":0,"created_at":"2017-01-06 16:19:46","updated_at":"2017-01-06 16:19:46"}.....]}}
      */
-    public function index()
+    public function index(Request $request)
     {
         try{
+            // pagination
+            $pageSize = $request->input('limit');
         	// fetch all mails except archive paginated way
             // model obj
             $mailDetailsObj = new Mail_detail();
-            $mails = $mailDetailsObj->listMails();
+            $mails = $mailDetailsObj->listMails($pageSize);
 
             $statusCode = 200;
             return response(array(
@@ -57,19 +60,22 @@ class MailboxapiController extends Controller
 
     /**
      * This method will process list of all archive mail messages
+     * @param Request $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      * eg. JSON Request
      * URL: http://laravel/api/v1/mailbox/listarchive
      * eg. JSON Response
      * {"error":false,"message":"Archived messages fetch successfully","mails":{"total":2,"per_page":5,"current_page":1,"last_page":1,"next_page_url":null,"prev_page_url":null,"from":1,"to":2,"data":[{"mail_detail_id":15,"mail_detail_uid":26,"mail_detail_sender":"Jane Austen","mail_detail_subject":"treasure-hunter","mail_detail_message":"The story is about a treasure-hunter and a treasure-hunter who is constantly annoyed by a misguided duke. It takes place on a forest planet in a galaxy-spanning commonwealth. The critical element of the story is a door being opened","mail_detail_time_sent":"2017-01-06 21:27:12","mail_detail_read":1,"mail_detail_archive":1,"created_at":"2017-01-06 08:46:25","updated_at":"2017-01-06 08:46:25"},{"mail_detail_id":10,"mail_detail_uid":21,"mail_detail_sender":"Ernest Hemingway","mail_detail_subject":"animals","mail_detail_message":"This is a tale about nihilism. The story is about a combative nuclear engineer who hates animals. It starts in a ghost town on a world of forbidden magic. The story begins with a legal dispute and ends with a holiday celebration.","mail_detail_time_sent":"2017-01-06 21:42:23","mail_detail_read":1,"mail_detail_archive":1,"created_at":"2017-01-06 08:46:25","updated_at":"2017-01-06 16:12:23"}]}}
      */
-    public function listArchiveMessages()
+    public function listArchiveMessages(Request $request)
     {
         try{
+            // pagination
+            $pageSize = $request->input('limit');
 			// fetching all archive mails paginated way
             // model obj
             $mailDetailsObj = new Mail_detail();
-            $mails = $mailDetailsObj->listArchive();
+            $mails = $mailDetailsObj->listArchive($pageSize);
             //print_r($mails); exit;
             $statusCode = 200;
             return response(array(

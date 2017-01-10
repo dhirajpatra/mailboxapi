@@ -19,9 +19,10 @@ class Mail_detail extends Model
 
     /**
      * This method will fetch all archive data
+     * @param $limit
      * @return mixed
      */
-    public function listArchive()
+    public function listArchive($limit)
     {
         try {
             // fetch all
@@ -29,7 +30,7 @@ class Mail_detail extends Model
                     ['mail_detail_archive', 1]
             ])
                 ->orderBy('mail_detail_id', 'desc')
-                ->paginate(5)
+                ->paginate($limit)
                 ->toArray();
 
             return $mails;
@@ -43,9 +44,10 @@ class Mail_detail extends Model
 
     /**
      * This method will fetch all mails except archive mail
+     * @param $limit
      * @return mixed
      */
-    public function listMails()
+    public function listMails($limit)
     {
         try {
             // fetching mails
@@ -53,7 +55,7 @@ class Mail_detail extends Model
                     ['mail_detail_archive', 0]
                 ])
                 ->orderBy('mail_detail_id', 'desc')
-                ->paginate(5)
+                ->paginate($limit)
                 ->toArray();
 
             return $mails;

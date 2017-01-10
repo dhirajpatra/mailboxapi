@@ -5,6 +5,15 @@ PHP 7.0, mysql 5.6, apache 2.4 in Ubuntu 16.04
 Laravel 5.2
 
 ==========================================================================================================================
+## How to install and run ##
+This is full Laravel development framework. Where all REST API has been implemented. You can change the database connections configuration. Also change the route as per your document root for application folder. eg. http://laravel/ [virtual host]
+
+Git clone or download the whole folder into your document root or in virtual host.
+And then run following commands from terminal:
+###php artisan make:migration mail_details###
+
+Used REST client to test API.
+
 ## Specifications ##
 
 Import messages from a JSON file
@@ -15,7 +24,7 @@ messages_sample.json
 Shared on /helpdocuments/ folder
 
 
-### API lists ###
+## API lists ##
 
 Message API
 The main task is to build an API for the messages. It should to be a REST based API with a JSON
@@ -123,14 +132,7 @@ eg. before updating to archive need to check whether it is already updated as ar
 * /tests/MailboxTest.php
 * /database/migration/2017_01_08_093215_mail_details.php [auto generated database migration file to create / update table]
 
-### How to run ###
-This is full Laravel development framework. Where all REST API has been implemented. You can change the database connections configuration. Also change the route as per your document root for application folder. eg. http://laravel/ [virtual host]
 
-Git clone or download the whole folder into your document root or in virtual host. 
-And then run following commands from terminal:
-###php artisan make:migration mail_details###
-
-Used REST client to test API. 
 Few Screen Shots from testing by rest client:
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/dfd_mail_box_api.png)
 ![ScreenShot](https://github.com/dhirajpatra/mailboxapi/blob/master/helpdocuments/phpunit_test_result.jpg)

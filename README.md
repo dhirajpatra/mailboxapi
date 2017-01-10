@@ -50,6 +50,7 @@ eg. JSON Response
 Retrieve a paginateable list of all messages. Show if messages were read already. Paginated way.
 
 JSON Request
+{"limit":"6"}
 
 URL: http://laravel/api/v1/mailbox
 
@@ -61,6 +62,7 @@ JSON Response
 Retrieve a paginateable list of all archived messages. Show if messages were read already. Paginated way.
 
 JSON Request
+{"limit":"5"}
 
 URL: http://laravel/api/v1/mailbox/listarchive
 

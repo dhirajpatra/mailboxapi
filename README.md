@@ -58,7 +58,7 @@ URL: http://laravel/api/v1/mailbox
 
 JSON Response
 ```json
-     {"error":false,"message":"All mail fetched","mails":{"total":10,"per_page":5,"current_page":1,"last_page":2,"next_page_url":"http:\/\/laravel\/api\/v1\/mailbox?page=2","prev_page_url":null,"from":1,"to":5,"data":[{"mail_detail_id":21,"mail_detail_uid":26,"mail_detail_sender":"Jane Austen","mail_detail_subject":"treasure-hunter","mail_detail_message":"The story is about a treasure-hunter and a treasure-hunter who is constantly annoyed by a misguided duke. It takes place on a forest planet in a galaxy-spanning commonwealth. The critical element of the story is a door being opened","mail_detail_time_sent":"2016-02-29 07:20:27","mail_detail_read":0,"mail_detail_archive":0,"created_at":"2017-01-06 16:19:46","updated_at":"2017-01-06 16:19:46"}.....]}}
+{"error":false,"message":"All mail fetched","mails":{"total":10,"per_page":5,"current_page":1,"last_page":2,"next_page_url":"http:\/\/laravel\/api\/v1\/mailbox?page=2","prev_page_url":null,"from":1,"to":5,"data":[{"mail_detail_id":21,"mail_detail_uid":26,"mail_detail_sender":"Jane Austen","mail_detail_subject":"treasure-hunter","mail_detail_message":"The story is about a treasure-hunter and a treasure-hunter who is constantly annoyed by a misguided duke. It takes place on a forest planet in a galaxy-spanning commonwealth. The critical element of the story is a door being opened","mail_detail_time_sent":"2016-02-29 07:20:27","mail_detail_read":0,"mail_detail_archive":0,"created_at":"2017-01-06 16:19:46","updated_at":"2017-01-06 16:19:46"}.....]}}
 ```
 ---
      

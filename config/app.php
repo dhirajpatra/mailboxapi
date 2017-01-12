@@ -163,6 +163,14 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
     	Laravel\Passport\PassportServiceProvider::class,
+        /*
+         * Passport secrets:
+         * Client ID: 3
+         * Client Secret: QCNSHSn9RxIfEjBxCCu6fPWKFobtQWTzYiIW0anM
+         * Password grant client created successfully.
+         * Client ID: 4
+         * Client Secret: rQnW1ryFronms2FYxaTXRxiBttt25Bptz7laT3IR
+         */
 
         /*
          * Package Service Providers...

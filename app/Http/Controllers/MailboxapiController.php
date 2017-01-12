@@ -47,7 +47,7 @@ class MailboxapiController extends Controller
                 'mails' => $mails,
             ), $statusCode);
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(
@@ -84,7 +84,7 @@ class MailboxapiController extends Controller
                 'mails' => $mails,
             ), $statusCode);
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(
@@ -132,7 +132,7 @@ class MailboxapiController extends Controller
             	), $statusCode);
             }
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(
@@ -163,7 +163,7 @@ class MailboxapiController extends Controller
             {
                 $messages = File::get($filename);
             }
-            catch (Illuminate\Filesystem\FileNotFoundException $exception)
+            catch (Illuminate\Filesystem\FileNotFound\Exception $\Exception)
             {
                 die("The file doesn't exist");
             }*/
@@ -193,7 +193,7 @@ class MailboxapiController extends Controller
             }
 
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(
@@ -240,7 +240,7 @@ class MailboxapiController extends Controller
             	), $statusCode);
             }
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(
@@ -290,7 +290,7 @@ class MailboxapiController extends Controller
             }
 
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             $statusCode = 400;
             return response(array(

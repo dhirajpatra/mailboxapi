@@ -35,7 +35,7 @@ class Mail_detail extends Model
 
             return $mails;
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             return array();
 
@@ -60,7 +60,7 @@ class Mail_detail extends Model
 
             return $mails;
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             return array();
 
@@ -84,7 +84,7 @@ class Mail_detail extends Model
 
             return true;
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             return false;
 
@@ -119,7 +119,7 @@ class Mail_detail extends Model
 
             }
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             return false;
 
@@ -153,7 +153,7 @@ class Mail_detail extends Model
 
             }
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
 
             return array();
 
@@ -213,7 +213,7 @@ class Mail_detail extends Model
                 return array();
             }
 
-        }catch (Exception $e){
+        }catch (\Exception $e){
             $statusCode = 400;
             return response(array(
                 'error' => true,

@@ -122,7 +122,7 @@ class Mail_detail extends Model
 
             if (!empty($mailDetails)) {
                 // update to archive if not already
-                if ($this->where([
+                if (!$this->where([
                         ['mail_detail_id', $id],
                         ['mail_detail_archive', 0]
                     ])

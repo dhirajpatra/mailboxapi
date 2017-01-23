@@ -45,7 +45,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         // If the request wants JSON (AJAX doesn't always want JSON)
-        if ($request->wantsJson()) {
+        if ($request->isJson() || $request->wantsJson()) {
             // Define the response
             $response = [
                 'errors' => 'Sorry, something went wrong.'

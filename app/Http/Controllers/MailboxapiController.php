@@ -49,10 +49,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'Mail fetch error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 
         }
@@ -86,10 +86,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'Archived messages fetch error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 
         }
@@ -134,10 +134,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'Fetched message details error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 	
         }
@@ -195,10 +195,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'New mail messages save error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 
         }
@@ -242,10 +242,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
             'error' => true,
-            'message' =>'Mail arcived update error',
+            'message' => $e->getMessage(),
             ), $statusCode);
 
         }
@@ -292,10 +292,10 @@ class MailboxapiController extends Controller
 
         }catch (\Exception $e){
 
-            $statusCode = 400;
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'Mail read update error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 
         }

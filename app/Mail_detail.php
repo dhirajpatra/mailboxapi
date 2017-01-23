@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -37,7 +38,11 @@ class Mail_detail extends Model
 
         }catch (\Exception $e){
 
-            return array();
+            $statusCode = $e->getCode();
+            return response(array(
+                'error' => true,
+                'message' => $e->getMessage(),
+            ), $statusCode);
 
         }
     }
@@ -62,7 +67,11 @@ class Mail_detail extends Model
 
         }catch (\Exception $e){
 
-            return array();
+            $statusCode = $e->getCode();
+            return response(array(
+                'error' => true,
+                'message' => $e->getMessage(),
+            ), $statusCode);
 
         }
     }
@@ -84,9 +93,13 @@ class Mail_detail extends Model
 
             return true;
 
-        }catch (\Exception $e){
+        } catch (\Exception $e){
 
-            return false;
+            $statusCode = $e->getCode();
+            return response(array(
+                'error' => true,
+                'message' => $e->getMessage(),
+            ), $statusCode);
 
         }
 
@@ -115,13 +128,17 @@ class Mail_detail extends Model
                 return true;
 
             }else{
-                return false;
+                throw new \mysqli_sql_exception("Update error");
 
             }
 
         }catch (\Exception $e){
 
-            return false;
+            $statusCode = $e->getCode();
+            return response(array(
+                'error' => true,
+                'message' => $e->getMessage(),
+            ), $statusCode);
 
         }
 
@@ -155,7 +172,11 @@ class Mail_detail extends Model
 
         }catch (\Exception $e){
 
-            return array();
+            $statusCode = $e->getCode();
+            return response(array(
+                'error' => true,
+                'message' => $e->getMessage(),
+            ), $statusCode);
 
         }
     }
@@ -170,25 +191,37 @@ class Mail_detail extends Model
 
        if(!empty($messages)){
            //print_r($messages); exit;
-           // saving all data
-            foreach ( $messages as $message ) {
-                $mailDetail = new Mail_detail();
+           try {
+               // saving all data
+               foreach ( $messages as $message ) {
+                   $mailDetail = new Mail_detail();
 
-                $mailDetail->mail_detail_uid = $message['uid'];
-                $mailDetail->mail_detail_sender = $message['sender'];
-                $mailDetail->mail_detail_subject = $message['subject'];
-                $mailDetail->mail_detail_message = $message['message'];
-                $mailDetail->mail_detail_time_sent = date("Y-m-d H:i:s", $message['time_sent']);
-                $mailDetail->mail_detail_read = 0;
-                $mailDetail->mail_detail_archive = 0;
+                   $mailDetail->mail_detail_uid = $message['uid'];
+                   $mailDetail->mail_detail_sender = $message['sender'];
+                   $mailDetail->mail_detail_subject = $message['subject'];
+                   $mailDetail->mail_detail_message = $message['message'];
+                   $mailDetail->mail_detail_time_sent = date("Y-m-d H:i:s", $message['time_sent']);
+                   $mailDetail->mail_detail_read = 0;
+                   $mailDetail->mail_detail_archive = 0;
 
-                $mailDetail->save();
-            }
+                   $mailDetail->save();
+               }
 
-           return true;
+               return true;
+           } catch (\Exception $e) {
+
+               $statusCode = $e->getCode();
+               return response(array(
+                   'error' => true,
+                   'message' => $e->getMessage(),
+               ), $statusCode);
+
+           }
+
+       } else {
+
+           throw new InvalidArgumentException("Invalid data to be saved error");
        }
-
-        return false;
 
     }
 
@@ -210,14 +243,15 @@ class Mail_detail extends Model
                 return $mailDetails;
 
             }else{
-                return array();
+                throw new InvalidArgumentException("Mail id not found");
             }
 
         }catch (\Exception $e){
-            $statusCode = 400;
+
+            $statusCode = $e->getCode();
             return response(array(
                 'error' => true,
-                'message' =>'Mail read update error',
+                'message' => $e->getMessage(),
             ), $statusCode);
 
         }

@@ -85,11 +85,14 @@ class Mail_detail extends Model
     {
         try {
             // updating mail
-            $this->where([
+            if (!$this->where([
                         ['mail_detail_id', $id],
                         ['mail_detail_read', 0]
                     ])
-                ->update(['mail_detail_read' => 1]);
+                ->update(['mail_detail_read' => 1])) {
+
+                throw new InvalidArgumentException("Mail id for read not correct or it is already read");
+            }
 
             return true;
 
@@ -117,22 +120,25 @@ class Mail_detail extends Model
             // verify email
             $mailDetails = $this->_checkMail($id);
 
-            if(!empty($mailDetails)) {
+            if (!empty($mailDetails)) {
                 // update to archive if not already
-                $this->where([
+                if ($this->where([
                         ['mail_detail_id', $id],
                         ['mail_detail_archive', 0]
                     ])
-                    ->update(['mail_detail_archive' => 1]);
+                    ->update(['mail_detail_archive' => 1])) {
+
+                    throw new InvalidArgumentException("Mail id already updated");
+                }
 
                 return true;
 
-            }else{
+            } else {
                 throw new \mysqli_sql_exception("Update error");
 
             }
 
-        }catch (\Exception $e){
+        } catch (\Exception $e){
 
             $statusCode = $e->getCode();
             return response(array(
